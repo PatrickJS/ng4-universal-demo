@@ -14,7 +14,8 @@ import { TransferHttpModule } from '@angularclass/universal-transfer-state/brows
     HttpModule,
     TransferHttpModule,
     RouterModule.forRoot([
-      { path: '', component: HomeView, pathMatch: 'full'}
+      { path: '', component: HomeView, pathMatch: 'full'},
+      { path: 'lazy', loadChildren: './+lazy/lazy.module#LazyModule'}
     ])
   ],
   providers: [
