@@ -1,5 +1,6 @@
 const { root } = require('./helpers');
 
+const nodeExternals = require('webpack-node-externals');
 const { AotPlugin } = require('@ngtools/webpack');
 
 /**
@@ -10,5 +11,6 @@ module.exports = {
   output: {
     filename: 'server.js'
   },
-  target: 'node'
+  target: 'node',
+  externals: [nodeExternals()],
 };
