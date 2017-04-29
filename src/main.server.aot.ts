@@ -7,7 +7,7 @@ import 'reflect-metadata';
 import 'rxjs/Rx';
 import * as express from 'express';
 import { platformServer, renderModuleFactory } from '@angular/platform-server';
-import { ServerAppModuleNgFactory } from './ngfactory/app/server-app.module.ngfactory';
+import { ServerAppModule } from './app/server-app.module';
 import { universalExpressEngine } from '@angularclass/universal-express';
 import { ROUTES } from './routes';
 import { App } from './api/app';
@@ -19,7 +19,7 @@ const port = 8000;
 const baseUrl = `http://localhost:${ port }`;
 
 app.engine('html', universalExpressEngine({
-  ngModule: ServerAppModuleNgFactory
+  ngModule: ServerAppModule
 }));
 
 app.set('view engine', 'html');
