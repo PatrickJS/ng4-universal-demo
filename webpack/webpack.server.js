@@ -12,5 +12,7 @@ module.exports = {
     filename: 'server.js'
   },
   target: 'node',
-  externals: [nodeExternals()],
+  externals: [nodeExternals({
+    whitelist: /@angular/
+  )],
 };
