@@ -1,3 +1,5 @@
+const path = require('path');
+const webpack = require('webpack');
 const { root } = require('./helpers');
 
 /**
@@ -18,5 +20,10 @@ module.exports = {
       { test: /\.html$/, loader: 'raw-loader' }
     ]
   },
-  plugins: []
+  plugins: [
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/,
+      path.resolve(__dirname, '../src')
+    )
+  ]
 };
